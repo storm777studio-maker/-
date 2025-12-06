@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مزرعتي السعيدة</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-header">
+        <h1>مزرعتي السعيدة</h1>
+        <div class="player-stats">
+            <div class="money-display">
+                <span>المال:</span>
+                <span id="money">50</span>
+                <span>درهم</span>
+            </div>
+            <div class="level-display">
+                <span>المستوى:</span>
+                <span id="level">1</span>
+                <div class="exp-bar">
+                    <div id="exp-progress" style="width: 0%;"></div>
+                </div>
+                <span id="exp-text">0/100</span>
+            </div>
+        </div>
+    </div>
+    <div class="game-container">
+        <div class="farm-background">
+            <div class="farm-land" id="farmLand"></div>
+            <div class="farm-sign left-sign">
+                <div class="sign-text">زرع كل شيء</div>
+                <div class="sign-money" id="growAllMoney">0 درهم</div>
+            </div>
+            <div class="farm-sign right-sign">
+                <div class="sign-text">حديقة فارغة</div>
+            </div>
+            <div class="thief" id="thief" style="display: none;">
+                <img src="https://cdn-icons-png.flaticon.com/512/1636/1636402.png" alt="لص">
+            </div>
+        </div>
+        <div class="controls">
+            <div class="inventory">
+                <h3>حقيبة التخزين</h3>
+                <div class="inventory-slots" id="inventorySlots"></div>
+            </div>
+            <div class="seed-shop">
+                <h3>متجر البذور</h3>
+                <div class="seed-options">
+                    <div class="seed-option" data-seed-type="carrot" data-seed-price="5">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3173/3173416.png" alt="جزر">
+                        <span>جزر (5 درهم)</span>
+                    </div>
+                    <div class="seed-option" data-seed-type="tomato" data-seed-price="7">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3173/3173425.png" alt="طماطم">
+                        <span>طماطم (7 درهم)</span>
+                    </div>
+                    <div class="seed-option" data-seed-type="corn" data-seed-price="10">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3173/3173431.png" alt="ذرة">
+                        <span>ذرة (10 درهم)</span>
+                    </div>
+                    <div class="seed-option" data-seed-type="strawberry" data-seed-price="12">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995644.png" alt="فراولة">
+                        <span>فراولة (12 درهم)</span>
+                    </div>
+                    <div class="seed-option" data-seed-type="apple" data-seed-price="15">
+                        <img src="https://cdn-icons-png.flaticon.com/512/883/883768.png" alt="تفاح">
+                        <span>تفاح (15 درهم)</span>
+                    </div>
+                    <div class="seed-option" data-seed-type="watermelon" data-seed-price="20">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995618.png" alt="بطيخ">
+                        <span>بطيخ (20 درهم)</span>
+                    </div>
+                    <div class="seed-option" data-seed-type="broccoli" data-seed-price="8">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995630.png" alt="بروكلي">
+                        <span>بروكلي (8 درهم)</span>
+                    </div>
+                </div>
+                <button id="buySeed" disabled>شراء البذرة</button>
+            </div>
+            <div class="actions">
+                <button id="waterPlants">سقي النباتات</button>
+                <button id="harvestPlants">حصاد النباتات</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

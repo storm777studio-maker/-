@@ -1,0 +1,298 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+    background-color: #87CEEB;
+    margin: 0;
+    padding: 0;
+    color: #2E8B57;
+}
+
+.game-header {
+    background-color: #8FBC8F;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-header h1 {
+    color: #2E8B57;
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+.player-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.money-display {
+    font-weight: bold;
+    color: #2E8B57;
+    font-size: 18px;
+}
+
+.level-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exp-bar {
+    width: 200px;
+    height: 10px;
+    background-color: #90EE90;
+    border-radius: 5px;
+    margin: 5px 0;
+    overflow: hidden;
+    border: 1px solid #2E8B57;
+}
+
+#exp-progress {
+    height: 100%;
+    background-color: #228B22;
+    transition: width 0.3s;
+}
+
+.game-container {
+    max-width: 950px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.farm-background {
+    background-color: #7CFC00;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #2E8B57;
+    min-height: 450px;
+}
+
+.farm-land {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+    background-color: #8B4513;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px dashed #2E8B57;
+}
+
+.cell {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #CD853F;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #8B4513;
+}
+
+.cell.planted {
+    background-color: #A0522D;
+}
+
+.cell img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.cell.ready {
+    position: relative;
+}
+
+.cell.ready::after {
+    content: "⭐";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: gold;
+    font-size: 20px;
+    z-index: 2;
+}
+
+.farm-sign {
+    position: absolute;
+    bottom: 10px;
+    width: 120px;
+    height: 80px;
+    background-color: #8B4513;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    border: 2px solid #2E8B57;
+}
+
+.left-sign {
+    left: 10px;
+}
+
+.right-sign {
+    right: 10px;
+}
+
+.sign-text {
+    margin-bottom: 5px;
+}
+
+.sign-money {
+    color: #FFD700;
+}
+
+.thief {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.thief img {
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.inventory {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    width: 30%;
+    border: 2px solid #2E8B57;
+}
+
+.inventory h3 {
+    margin-top: 0;
+    color: #2E8B57;
+}
+
+.inventory-slots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.inventory-slot {
+    width: 50px;
+    height: 50px;
+    background-color: #90EE90;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2E8B57;
+}
+
+.inventory-slot img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.seed-shop {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    width: 30%;
+    border: 2px solid #2E8B57;
+}
+
+.seed-shop h3 {
+    margin-top: 0;
+    color: #2E8B57;
+}
+
+.seed-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.seed-option {
+    background-color: #90EE90;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid #2E8B57;
+}
+
+.seed-option:hover {
+    background-color: #3CB371;
+}
+
+.seed-option img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.seed-option span {
+    display: block;
+    font-size: 12px;
+    color: #2E8B57;
+}
+
+.actions {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button {
+    padding: 12px;
+    margin: 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3CB371;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s;
+    border: 1px solid #2E8B57;
+}
+
+button:hover {
+    background-color: #2E8B57;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
